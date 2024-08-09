@@ -1,0 +1,150 @@
+/* Ensure that the body and html take up the full height of the viewport */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack header and content vertically */
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+/* Header styling */
+.header {
+    background-color: white;
+    width: 100%;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 35px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.header .logo {
+    width: 5%;
+    height: auto;
+    margin-top: 25px;
+    margin-right: 10px; /* Add some space between the two images */
+}
+
+.header .header-img {
+    width: 30%;
+    height: 100px;
+    object-fit: contain; /* Ensure the image fits within the dimensions without distortion */
+}
+
+/* Content styling */
+.content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: calc(100vh - 60px); 
+    width: 100vw;
+    background-color: rgb(250, 228, 250);
+    padding: 0 20px; /* Add padding to the left and right */
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden; /* Prevent internal scrollbars */
+    padding-top: 20px;
+}
+
+/* Scene styling */
+.scene {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px; /* Reduced padding */
+}
+
+.scene img {
+    max-width: 50%; /* Ensure the image does not take more than 60% of the width */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px; /* Reduced margin */
+}
+
+.text {
+    width: 22%; /* Set text width to 30% */
+    font-size: 18px; /* Increase text size */
+    padding: 0 20px; /* Add padding inside text container */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    text-align: left;
+}
+
+/* Navigation buttons styling */
+.navigation {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px; /* Add space between buttons */
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    /* margin-top: 10px;  */
+}
+
+button {
+    padding: 10px 20px; /* Adjusted padding */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px; /* Increase button text size */
+}
+
+.scene button {
+    font-size: 25px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+span {
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: lightblue;
+    border-radius: 1px;
+}
+
+li {
+    list-style: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .scene img {
+        width: 50%; /* Adjusted for smaller screens */
+        margin-right: 5px; /* Adjust margin */
+    }
+    .text {
+        width: 45%; /* Adjust width for smaller screens */
+        font-size: 16px; /* Decrease font size for smaller screens */
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .scene {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    .scene img {
+        width: 80%; /* Adjusted for smaller screens */
+        margin-right: 0; /* Reset margin */
+        margin-bottom: 10px; /* Add margin below the image */
+    }
+    .text {
+        width: 90%; /* Take full width */
+        font-size: 14px; /* Decrease font size for smaller screens */
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+}
